@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import axios from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
+import "./register.css"; // make sure to import your CSS
 
 function Register() {
   const navigate = useNavigate();
@@ -18,10 +19,12 @@ function Register() {
       const lastnameValue = lastNameDom.current.value;
       const emailValue = emailDom.current.value;
       const passwordValue = passwordDom.current.value;
-       if(!usernameValue || !firstnameValue  || !lastnameValue || !emailValue || !passwordValue){
-        alert("Registared successfull , please login!")
+
+      if (!usernameValue || !firstnameValue || !lastnameValue || !emailValue || !passwordValue) {
+        alert("Please fill in all fields!");
         return;
-       }
+      }
+
       await axios.post("/users/register", {
         username: usernameValue,
         firstname: firstnameValue,
@@ -31,42 +34,46 @@ function Register() {
       });
 
       console.log("Registration successful!");
-      navigate("/login")
+      alert("Registered successfully! Please login.");
+      navigate("/login");
     } catch (error) {
-      console.log("something went wrong")
-      console.error( error.response);
+      console.log("Something went wrong");
+      console.error(error.response);
+      alert("Registration failed. Please try again.");
     }
   }
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <span>Username:</span>
-          <input type="text" placeholder="username" ref={userNameDom} />
+    <section className="register-section">
+      <form className="register-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <span className="form-label">Username:</span>
+          <input type="text" placeholder="username" ref={userNameDom} className="form-input" />
         </div>
-        <br />
-        <div>
-          <span>First Name:</span>
-          <input type="text" placeholder="first name" ref={firstNameDom} />
+
+        <div className="form-group">
+          <span className="form-label">First Name:</span>
+          <input type="text" placeholder="first name" ref={firstNameDom} className="form-input" />
         </div>
-        <br />
-        <div>
-          <span>Last Name:</span>
-          <input type="text" placeholder="last name" ref={lastNameDom} />
+
+        <div className="form-group">
+          <span className="form-label">Last Name:</span>
+          <input type="text" placeholder="last name" ref={lastNameDom} className="form-input" />
         </div>
-        <br />
-        <div>
-          <span>Email:</span>
-          <input type="email" placeholder="email" ref={emailDom} />
+
+        <div className="form-group">
+          <span className="form-label">Email:</span>
+          <input type="email" placeholder="email" ref={emailDom} className="form-input" />
         </div>
-        <br />
-        <div>
-          <span>Password:</span>
-          <input type="password" placeholder="password" ref={passwordDom} />
+
+        <div className="form-group">
+          <span className="form-label">Password:</span>
+          <input type="password" placeholder="password" ref={passwordDom} className="form-input" />
         </div>
-        <br />
-        <button type="submit">Register</button>
+
+        <button type="submit" className="form-button">Register</button>
+
+        <a href="/login" className="form-link">Already have an account? Login</a>
       </form>
     </section>
   );

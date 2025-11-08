@@ -1,0 +1,79 @@
+/* ===== Register Page Styles ===== */
+.register-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  
+  font-family: Arial, sans-serif;
+}
+
+.register-form {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #fbc2eb;
+}
+
+.form-button {
+  padding: 12px;
+  background: linear-gradient(to right, #fbc2eb, #a18cd1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.form-button:hover {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+}
+
+.form-link {
+  margin-top: 12px;
+  text-align: center;
+  display: block;
+  color: #a18cd1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-link:hover {
+  color: #fbc2eb;
+  text-decoration: underline;
+}

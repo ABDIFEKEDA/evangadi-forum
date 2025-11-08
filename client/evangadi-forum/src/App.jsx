@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import Regster from "./pages/Regster";
 import { useEffect, useState, createContext } from "react";
 import axios from "../src/axiosConfig";
+import "./App.css";
+import Landingpgae from "./pages/Landingpgae";
 
 export const AppState = createContext();
 function App() {
@@ -23,7 +25,7 @@ function App() {
       try {
         const { data } = await axios.get("/users/checkusers", {
           headers: {
-            Authorization: "Bearer " + token, // ✅ Corrected: 'headers' and space after 'Bearer'
+            Authorization: "Bearer " + token, 
           },
         });
         setUser(data);
@@ -42,6 +44,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Regster />} />
+        <Route path="/landpage" element={<Landingpgae />} />
       </Routes>
     </AppState.Provider>
   );
