@@ -1,79 +1,121 @@
-/* ===== Register Page Styles ===== */
 .register-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
-  
-  font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f0f2f5; /* Light gray background */
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
 }
 
+/* Form Card Styling */
 .register-form {
-  background-color: #fff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 450px; /* Standard card width */
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form groups */
 }
 
-.register-form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+/* --- Typography and Header Simulation --- */
+
+/* Simulation for the main title "Join the network" */
+.register-form::before {
+    content: "Join the network";
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
+/* Subtitle/Hint link at the top (The image implies this structure) */
+.register-form > p:nth-of-type(1) {
+    text-align: center;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
 
+/* Since the image uses placeholders as labels, we hide the explicit span labels */
 .form-label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
+    display: none;
 }
 
+/* --- Input Group Styles --- */
+.form-group {
+    /* Ensures input takes full width of the form group */
+    width: 100%;
+}
+
+/* Input Field Styling */
 .form-input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.3s ease;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Slightly rounded corners */
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Important for full width padding */
+}
+
+.form-input::placeholder {
+    color: #999;
 }
 
 .form-input:focus {
-  border-color: #fbc2eb;
+    border-color: #5b73e8; /* Blue border on focus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(91, 115, 232, 0.2);
 }
 
+/* --- Button Styling --- */
 .form-button {
-  padding: 12px;
-  background: linear-gradient(to right, #fbc2eb, #a18cd1);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s ease;
+    background-color: #5b73e8; /* Vibrant blue color */
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
 }
 
 .form-button:hover {
-  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    background-color: #455ac8;
 }
 
+.form-button:active {
+    transform: scale(0.99);
+}
+
+/* --- Link Styling --- */
+
+/* "Already have an account? Login" link at the bottom */
 .form-link {
-  margin-top: 12px;
-  text-align: center;
-  display: block;
-  color: #a18cd1;
-  text-decoration: none;
-  font-weight: bold;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
 }
 
-.form-link:hover {
-  color: #fbc2eb;
-  text-decoration: underline;
+.form-link a {
+    color: #ff8c00; /* Orange color for the link text */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+    color: #e07b00;
 }

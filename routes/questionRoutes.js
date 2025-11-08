@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router()
-const authMiddleware = require('../middleware/authMidleware');
+const {getQuestion}  = require('../controller/questionController.js');
+const authMiddleware = require('../middleware/authMidleware.js');
 
 
-router.get("/all-questions",authMiddleware,(req,res)=>{
-   return res.send("all questions");
-})
+router.get('/all-questions' ,authMiddleware,getQuestion);
 module.exports = router
