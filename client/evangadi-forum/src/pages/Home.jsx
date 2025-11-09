@@ -28,7 +28,7 @@ function Home() {
 
       alert("Login successful!");
       localStorage.setItem("token", data.token);
-      navigate("/dashboard"); // Redirect to dashboard instead of home
+      navigate("/dashboard/Home"); 
       console.log(data);
     } catch (error) {
       alert(error?.response?.data?.msg || "Login failed!");

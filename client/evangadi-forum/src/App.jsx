@@ -6,6 +6,7 @@ import { useEffect, useState, createContext } from "react";
 import axios from "../src/axiosConfig";
 import "./App.css";
 import Landingpgae from "./pages/Landingpgae";
+import Homes from "./pages/dashboard/Homes";
 
 export const AppState = createContext();
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Regster />} />
         <Route path="/landpage" element={<Landingpgae />} />
+        <Route path="/dashboard/Home" element={<Homes />} />
       </Routes>
     </AppState.Provider>
   );
